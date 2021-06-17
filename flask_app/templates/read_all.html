@@ -23,7 +23,7 @@
             {% for spiders in my_users: %}
             <tr>
                 <td> {{spiders.id}} </td> 
-                <td> {{spiders.first_name}} </td>
+                <td><a href="/show_user/{{users.id}}">{{spiders.first_name}}</a></td>
                 <td> {{spiders.last_name}} </td>
                 <td> {{spiders.email}} </td>
                 <td> {{spiders.created_at}} </td>

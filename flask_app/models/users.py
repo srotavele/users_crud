@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from ..config.mysqlconnection import connectToMySQL
 
 class User:
     def __init__(self, data):
@@ -27,3 +27,10 @@ class User:
         users_id = connectToMySQL('users_schema').query_db(query,data)
         return users_id
          
+         
+    @classmethod
+    def get_one(cls,data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL('users_schema').query_db(query)
+        
+    
