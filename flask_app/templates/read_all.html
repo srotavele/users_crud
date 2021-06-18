@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>My Friends</h1>
+    <h3>Click on the First Name for details!</h3>
     <table>
         <thead>
             <tr>
@@ -17,21 +18,26 @@
                 <th> Email </th>
                 <th> Created At </th>
                 <th> Actions </th>
+                
             </tr>
         </thead>
         <tbody>
             {% for spiders in my_users: %}
             <tr>
-                <td> {{spiders.id}} </td> 
-                <td><a href="/show_user/{{users.id}}">{{spiders.first_name}}</a></td>
-                <td> {{spiders.last_name}} </td>
-                <td> {{spiders.email}} </td>
-                <td> {{spiders.created_at}} </td>
+                <td>{{spiders.id}}</td> 
+                <td><a href="/show_user/{{spiders.id}}">{{spiders.first_name}}</a></td>
+                <td> {{spiders.last_name}} </td>
+                <td> {{spiders.email}} </td>
+                <td> {{spiders.created_at}} </td>
+                <td><a href="/show_edit_user/{{ spiders.id }}">Edit |
+                <a href="/delete_user/{{ spiders.id }}">Delete</a></>
+
+                
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="/user/form">Add New Friend</a>
+    <p><a href="/user/form">Add New Friend</a></p>
     
 </body>
 </html>

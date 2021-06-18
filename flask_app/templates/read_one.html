@@ -8,16 +8,16 @@
 </head>
 <body>
     <div>
-        <h1>{{ user.id }}</h1>
+        <h1>User: {{ user.id }}</h1>
         <a href="/">Home</a>
     </div>
         <p> Full Name: {{ user.first_name }} {{ user.last_name }}</p>
         <p> Email: {{user.email }}</p>
         <p> Created On: {{ user.created_at }}</p>
         <p> Updated On: {{ user.updated_at }}</p>
-        <H6> 
-            <a href="">Edit</a> |
-            <a href="">Delete</a>
-        </H6>
+        <H5> 
+            <a href="/show_edit_user/{{ user.id }}">Edit</a> |
+            <a href="/delete_user/{{ user.id }}">Delete</a>
+        </H5>
 </body>
 </html>
